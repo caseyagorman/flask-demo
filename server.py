@@ -37,12 +37,19 @@ MOST_LOVED_MELONS = {
 # YOUR ROUTES GO HERE
 @app.route("/top-melons")
 def show_top_melons():
+    name = session.get('name')
+    if name:
+        return render_template('top-melons.html', MOST_LOVED_MELONS=MOST_LOVED_MELONS)
+    else:
+        return redirect('/')
 
-    return render_template('top-melons.html',
-                            MOST_LOVED_MELONS=MOST_LOVED_MELONS)
-@app.route('/')
+@app.route("/")
 def show_name_form():
-    return render_template('homepage.html')
+    name = session.get('name')
+    if name:
+        return redirect('/top-melons')
+    else:
+        return render_template('homepage.html')
 
 
 
@@ -60,6 +67,6 @@ if __name__ == "__main__":
     app.debug = True
 
     # Use the DebugToolbar
-    DebugToolbarExtension(app)
+    # DebugToolbarExtension(app)
 
     app.run(host="0.0.0.0")

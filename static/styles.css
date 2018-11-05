@@ -1,10 +1,54 @@
-img {
+h1 {
+    font-family: 'Bowlby One SC', cursive;
+}
+
+#topMelon {
     height: 200px;
     width: 200px;
 }
 
 .melon-div {
+    font-family: 'Bowlby One SC', cursive;
     display: inline-block;
     padding: 10px;
     width: 205px;
+}
+
+#deathMelon {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.uberMelon {
+  font-family: 'Bowlby One SC', cursive;
+  text-align: center;
+  color: yellow;
+    text-shadow: -1px 0 black, 0 3px black, 3px 0 black, 0 -1px black;
+
+}
+
+.nameForm {
+  font-family: 'Bowlby One SC', cursive;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 10px
+}
+input[type=button], input[type=submit]{
+  font-family: 'Bowlby One SC', cursive;
+  background-color: yellow;
+  color: black;
+  padding: 16px 32px;
+  border: 2px solid black;
+  border-radius: 10px
+
 }

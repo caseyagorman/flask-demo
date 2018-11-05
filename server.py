@@ -37,8 +37,22 @@ MOST_LOVED_MELONS = {
 # YOUR ROUTES GO HERE
 @app.route("/top-melons")
 def show_top_melons():
+
     return render_template('top-melons.html',
                             MOST_LOVED_MELONS=MOST_LOVED_MELONS)
+@app.route('/')
+def show_name_form():
+    return render_template('homepage.html')
+
+
+
+
+@app.route('/get-name')
+def get_name():
+    name = request.args.get('name')
+    session['name'] = name
+    return redirect('/top-melons')
+
 
 if __name__ == "__main__":
     # We have to set debug=True here, since it has to be True at the
